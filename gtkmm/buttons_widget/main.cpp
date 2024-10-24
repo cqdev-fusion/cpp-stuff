@@ -1,5 +1,4 @@
 #include "buttonWidget.hpp"
-#include "giomm/appinfo.h"
 #include <gtkmm/application.h>
 
 int main(int argc, char *argv[]) {
