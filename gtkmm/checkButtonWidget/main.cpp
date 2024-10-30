@@ -1,6 +1,7 @@
-#include <iostream>
+#include "checkBtn.hpp"
+#include <gtkmm/application.h>
 
-int main (int argc, char *argv[]) {
-  std::cout << "Meson loaded" << std::endl;
-  return 0;
+int main(int argc, char *argv[]) {
+  auto app = Gtk::Application::create("org.app.app");
+  return app->make_window_and_run<MyCbtn>(argc, argv);
 }
