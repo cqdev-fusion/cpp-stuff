@@ -3,7 +3,7 @@ project(
   'cpp',
   version: '1.0.0',
   default_options: ['cpp_std=c++23', 'warning_level=3', 'debug=true'],
-  meson_version: '1.6.0',
+  meson_version: '1.6.1',
 )
 src = ['main.cpp', 'entryWgt.hpp', 'entryWgt.cpp']
 gtk_deps = dependency('gtkmm-4.0')
