@@ -3,7 +3,7 @@ project(
   'cpp',
   version: '4.12.0',
   default_options: ['cpp_std=c++23', 'warning_level=3'],
-  meson_version: '>=1.7.0',
+  meson_version: '>=1.8.0',
 )
 
 src = ['main.cpp', 'basicWindow.cpp', 'basicWindow.hpp']

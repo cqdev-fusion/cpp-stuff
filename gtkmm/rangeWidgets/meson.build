@@ -7,7 +7,7 @@ project(
     'warning_level=3',
     'debug=true',
   ],
-  meson_version: '1.6.1',
+  meson_version: '1.8.0',
 )
 src = ['main.cpp', 'rangeWidgetWindow.cpp', 'rangeWidgetWindow.hpp']
 gtkdeps = dependency('gtkmm-4.0')
