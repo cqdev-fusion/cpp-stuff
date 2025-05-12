@@ -6,12 +6,12 @@
 #include <gtkmm/window.h>
 
 class ExampleWindow : public Gtk::Window {
-  public:
+public:
   ExampleWindow();
   ~ExampleWindow();
 
 protected:
-  void on_btn_clicked(const Glib::ustring& data);
+  void on_btn_clicked(const Glib::ustring &data);
 
   Gtk::Box m_box1;
   Gtk::Button m_btn1, m_btn2;
