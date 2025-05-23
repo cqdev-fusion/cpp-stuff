@@ -6,10 +6,10 @@
 #include "gtkmm/signallistitemfactory.h"
 #include "gtkmm/singleselection.h"
 #include "gtkmm/stringlist.h"
-#include <gtkmm/label.h>
 #include "sigc++/functors/mem_fun.h"
+#include <gtkmm/label.h>
 
-MessageList::MessageList(){
+MessageList::MessageList() {
   set_policy(Gtk::PolicyType::AUTOMATIC, Gtk::PolicyType::AUTOMATIC);
   set_child(m_listView);
 
@@ -18,29 +18,32 @@ MessageList::MessageList(){
   m_listView.set_model(selection_model);
 
   for (int i = 1; i <= 10; i++) {
-  m_refStringList->append(Glib::ustring::format("message #", i));
+    m_refStringList->append(Glib::ustring::format("message #", i));
 
     auto factory = Gtk::SignalListItemFactory::create();
-    factory->signal_setup().connect(sigc::mem_fun(*this, &MessageList::on_setup_message));
-    factory->signal_bind().connect(sigc::mem_fun(*this, &MessageList::on_bind_message));
+    factory->signal_setup().connect(
+        sigc::mem_fun(*this, &MessageList::on_setup_message));
+    factory->signal_bind().connect(
+        sigc::mem_fun(*this, &MessageList::on_bind_message));
     m_listView.set_factory(factory);
   }
 }
 
-MessageList::~MessageList(){}
+MessageList::~MessageList() {}
 
-void MessageList::on_setup_message(const Glib::RefPtr<Gtk::ListItem>& list_item){
+void MessageList::on_setup_message(
+    const Glib::RefPtr<Gtk::ListItem> &list_item) {
   auto label = Gtk::make_managed<Gtk::Label>();
   label->set_halign(Gtk::Align::START);
   list_item->set_child(*label);
 }
 
-void MessageList::on_bind_message(const Glib::RefPtr<Gtk::ListItem>& list_item)
-{
+void MessageList::on_bind_message(
+    const Glib::RefPtr<Gtk::ListItem> &list_item) {
   auto pos = list_item->get_position();
   if (pos == GTK_INVALID_LIST_POSITION)
     return;
-  auto label = dynamic_cast<Gtk::Label*>(list_item->get_child());
+  auto label = dynamic_cast<Gtk::Label *>(list_item->get_child());
   if (!label)
     return;
   label->set_text(m_refStringList->get_string(pos));

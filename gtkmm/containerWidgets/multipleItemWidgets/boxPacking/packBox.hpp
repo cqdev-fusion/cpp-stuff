@@ -1,7 +1,5 @@
 #pragma once
-#include "gtkmm/enums.h"
-#include <gtkmm/box.h>
-#include <gtkmm/button.h>
+#include <gtkmm.h>
 
 class PackBox : public Gtk::Box {
 public:
@@ -9,5 +7,5 @@ public:
           Gtk::Align align = Gtk::Align::FILL, int margin = 0);
 
 protected:
-  Gtk::Button m_btns[4];
+  Gtk::Button m_buttons[4];
 };
