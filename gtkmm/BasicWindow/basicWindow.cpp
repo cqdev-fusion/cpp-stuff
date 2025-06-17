@@ -8,4 +8,4 @@ BasicWindow::BasicWindow() {
   set_default_size(SCREEN_WIDTH, SCREEN_HEIGHT);
 }
 
-BasicWindow::~BasicWindow() {}
+BasicWindow::~BasicWindow(){}
