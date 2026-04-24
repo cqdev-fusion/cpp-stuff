@@ -1,12 +1,14 @@
-project('Basic Window', 'cpp',
+project(
+  'Basic Window',
+  'cpp',
   version: '1.0.0',
   default_options: [
-    'cpp_std=c++23',
+    'cpp_std=c++26',
     'warning_level=3',
     'debug=true',
   ],
-  meson_version: '1.8.0',
-  )
+  meson_version: '1.11.1',
+)
 
 src = ['main.cpp', 'basicWindow.cpp', 'basicWindow.hpp']
 gtkdeps = dependency('gtkmm-4.0')
